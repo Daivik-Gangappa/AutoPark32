@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "author": "Daivik Gangappa",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 64.05,
+      "left": -15.6,
+      "attrs": { "env": "micropython-20231227-v1.22.0" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 188.4,
+      "left": -101.8,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 188.4,
+      "left": -73,
+      "attrs": { "color": "green" }
+    },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -132.9, "left": -119.3, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -15.25,
+      "left": 0,
+      "attrs": { "value": "2000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 13.55,
+      "left": 9.6,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "ultrasonic1:TRIG", "pico:GP3", "green", [ "v0" ] ],
+    [ "ultrasonic1:GND", "pico:GND.1", "black", [ "v0" ] ],
+    [ "led1:A", "pico:GP15", "green", [ "v0" ] ],
+    [ "led2:A", "pico:GP14", "green", [ "v0" ] ],
+    [ "led1:C", "pico:GND.4", "green", [ "v0" ] ],
+    [ "led2:C", "pico:GND.4", "green", [ "v0" ] ],
+    [ "ultrasonic1:ECHO", "r1:1", "green", [ "v0" ] ],
+    [ "r2:2", "pico:GND.8", "green", [ "v0" ] ],
+    [ "r1:2", "r2:1", "green", [ "h-1.2", "v19.2", "h-48" ] ],
+    [ "r1:2", "pico:GP2", "green", [ "h27.6", "v57.6", "h-96" ] ]
+  ],
+  "dependencies": {}
+}
