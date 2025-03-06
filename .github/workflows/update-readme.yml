@@ -1,0 +1,31 @@
+name: Auto Update README
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # Runs every day at midnight (UTC)
+  push:
+    branches:
+      - main  # Runs whenever you push to main branch
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Update README content
+        run: |
+          echo "Last updated: $(date)" > README.md
+          echo "" >> README.md
+          echo "## Auto-generated README" >> README.md
+          echo "This README updates automatically with a timestamp." >> README.md
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add README.md
+          git commit -m "Auto-updated README.md with timestamp" || exit 0
+          git push
