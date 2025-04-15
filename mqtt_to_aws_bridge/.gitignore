@@ -1,0 +1,7 @@
+# AWS IoT certs and keys
+*.pem
+*.crt
+*.key
+*.pem
+*.key
+*.crt
