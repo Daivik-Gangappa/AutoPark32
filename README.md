@@ -22,7 +22,9 @@ Time of day and availability trends
 This allows demand-based real-time pricing similar to modern smart city systems.
 
 **🧩 Architecture Overview**
+
 🔁 Flow 1: AWS IoT Core (Secure Cloud Processing)
+
 [Wokwi ESP32 Simulation]
         |
         | MQTT (smart_parking/status)
@@ -32,6 +34,7 @@ This allows demand-based real-time pricing similar to modern smart city systems.
         | Python MQTT Bridge (TLS & Certs)
         v
 [AWS IoT Core]
+
 🔁 Flow 2: ThingSpeak + Frontend Visualization
 [Wokwi ESP32 Simulation]
         |
