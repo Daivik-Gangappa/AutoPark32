@@ -26,22 +26,21 @@ This allows demand-based real-time pricing similar to modern smart city systems.
 🔁 Flow 1: AWS IoT Core (Secure Cloud Processing)
 
 [Wokwi ESP32 Simulation]
-        |
-        | MQTT (smart_parking/status)
-        v
+|
+| MQTT (smart_parking/status)
+v
 [HiveMQ - test.mosquitto.org]
-        |
-        | Python MQTT Bridge (TLS & Certs)
-        v
+|
+| Python MQTT Bridge (TLS & Certs)
+v
 [AWS IoT Core]
-
 🔁 Flow 2: ThingSpeak + Frontend Visualization
 [Wokwi ESP32 Simulation]
-        |
-        v
+|
+v
 [ThingSpeak API]
-        |
-        v
+|
+v
 [React Frontend App]
 
 **⚙️ Tech Stack**
